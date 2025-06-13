@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ao Infinito e Além 💙</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #0077be, #00c6ff);
+            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
+            padding: 40px;
+            max-width: 800px;
+            margin: auto;
+        }
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3em;
+            text-align: center;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #ffe57f;
+        }
+        .hidden {
+            display: none;
+        }
+        #countdown {
+            font-size: 1.5em;
+            text-align: center;
+            background: #ffffff30;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="before">
+        <div id="countdown">Carregando contagem regressiva...</div>
+        <h1>A carta estará disponível em breve 💌</h1>
+    </div>
+
+    <div id="after" class="hidden">
+        <h1>Ao Infinito e Além 💙</h1>
+
+        <div class="section">
+            <p>Olá meu amor,</p>
+            <p>Se você está lendo essa cartinha, é porque deu tudo certo e, com a graça de Deus, conseguimos juntos chegar até esse dia tão especial. Hoje é a nossa primeira noite juntos como um casal, uma nova família. 🥰</p>
+        </div>
+
+        <div class="section">
+            <p>Meu amor, como foram longos, malucos e maravilhosos esses últimos anos! Quando começamos, não imaginávamos que o amor estava mais para um oceano do que para uma piscininha.</p>
+            <p>O mar é lindo, cheio de vida, com ondas e maravilhas — mas também tem tempestades, agitação e às vezes até medo. Ainda assim, no fim de cada tempestade vem o pôr do sol mais lindo que já vimos juntos no horizonte. 🌅</p>
+        </div>
+
+        <div class="section">
+            <p>Foi com você que aprendi o que é o <span class="highlight">amor verdadeiro</span>. Sempre achei bonito o trecho de 1 Coríntios 13:4-7, mas hoje consigo sentir o que ele realmente significa, e fiz minha própria releitura:</p>
+            <blockquote>
+                Amor de verdade não é feito só de sorrisos em fotos bonitas ou juras em redes sociais.<br>
+                É paciente quando o outro está cansado ou de cara fechada.<br>
+                É gentil mesmo depois de um dia difícil.<br>
+                Não se compara, não grita, não se impõe.<br>
+                Ele ouve, respeita, caminha junto.<br>
+                Amor de verdade não guarda mágoas, mas cura feridas.<br>
+                Aguenta firme nas discussões, nas contas apertadas, nos silêncios.<br>
+                Ele espera, ele acredita, ele <span class="highlight">não desiste</span>.<br>
+                Porque o amor que nasce em Deus é feito de <span class="highlight">escolhas diárias</span>: de perdoar, permanecer, recomeçar, crescer juntos.
+            </blockquote>
+        </div>
+
+        <div class="section">
+            <p>Amar e viver um relacionamento hoje em dia é um ato de coragem. Não é perfeito, tem brigas, tropeços e dias em que tudo parece difícil. Mas com Deus como alicerce, nosso amor tem raiz e propósito — não se desfaz fácil.</p>
+        </div>
+
+        <div class="section">
+            <p><strong>Ana</strong>, você é forte, linda, iluminada, e carrega uma força interior admirável. Sou abençoado por Deus por tê-la como minha esposa. E quero ser — com toda minha alma — o melhor marido, namorado, amigo e futuro pai que eu puder ser.</p>
+            <p>Conte comigo. Para todos os momentos. Sempre. Você é ainda mais incrível do que imagina.</p>
+        </div>
+
+        <div class="section">
+            <p>Te amo para todo sempre,</p>
+            <p><strong>AO INFINITO E ALÉM 🚀💙</strong></p>
+        </div>
+    </div>
+
+    <script>
+        const releaseDate = new Date("2025-06-13T13:20:00");
+        const countdownEl = document.getElementById("countdown");
+        const beforeEl = document.getElementById("before");
+        const afterEl = document.getElementById("after");
+
+        function updateCountdown() {
+            const now = new Date();
+            const timeLeft = releaseDate - now;
+            if (timeLeft <= 0) {
+                beforeEl.classList.add("hidden");
+                afterEl.classList.remove("hidden");
+                return;
+            }
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((timeLeft / 1000 / 60) % 60);
+            const seconds = Math.floor((timeLeft / 1000) % 60);
+
+            countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
