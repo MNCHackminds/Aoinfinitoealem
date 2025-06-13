@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Carta com Amor</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; text-align: center; padding: 40px; background: #f8f9fa; color: #333; }
+        .card { max-width: 700px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+        h1 { color: #005b96; }
+        .hidden { display: none; }
+        .countdown { font-size: 24px; margin-top: 20px; color: #dc3545; }
+        pre { white-space: pre-wrap; text-align: left; line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>✨ Carta Especial ✨</h1>
+        <div id="before">
+            <p>Ei, calma aí! Sua carta será revelada em:</p>
+            <div class="countdown" id="countdown"></div>
+        </div>
+        <div id="after" class="hidden">
+            <pre>
+O amor de verdade não é aquele que só sorri nas fotos bonitas ou que coleciona juras nas redes sociais. 
+Amor de verdade é paciente mesmo quando o outro tá de cara feia, cansado, ou dizendo o que você não queria ouvir.
+
+Amor de verdade é gentil, mesmo quando o dia foi puxado, mesmo quando o orgulho quer falar mais alto.
+Ele não vive comparando, não joga as conquistas na cara, não precisa gritar pra ser reconhecido.
+
+Ele não força a barra, não impõe controle.
+Ele ouve. Respeita o tempo. O espaço.
+
+Amor de verdade não guarda rancor dos erros do passado, mas caminha junto pra curar as feridas.
+Não vibra com a queda do outro. Se alegra com a verdade, com o crescimento, mesmo quando isso exige mudança.
+
+Ele aguenta firme nas discussões, nas contas apertadas, nos silêncios incômodos.
+Ele crê que ainda vale a pena, mesmo quando o mundo diz pra desistir.
+Ele espera o melhor, mesmo quando tudo parece dar errado.
+Ele não desiste, mesmo quando o coração tá machucado.
+
+Porque o amor verdadeiro — o que nasce em Deus —
+não é feito só de sentimentos, é feito de escolhas.
+Escolhas diárias de permanecer, perdoar, recomeçar e crescer juntos.
+
+Viver um relacionamento tempos atuais é um ato de coragem. Não é perfeito, tem brigas, tem tropeços, tem dias em que parece que não vai dar. Mas quando é baseado no amor que vem de Deus, não se desfaz fácil. Não se joga fora por qualquer tempestade. É saber que não estamos sozinhos na luta. É ter fé que esse amor tem propósito, tem raiz, tem alicerce firme. Não é conto de fadas — é construção diária.
+</pre>
+        </div>
+    </div>
+
+    <script>
+        const releaseDate = new Date("2025-06-14T00:00:00");
+        const countdownEl = document.getElementById("countdown");
+        const beforeEl = document.getElementById("before");
+        const afterEl = document.getElementById("after");
+
+        function updateCountdown() {
+            const now = new Date();
+            const timeLeft = releaseDate - now;
+            if (timeLeft <= 0) {
+                beforeEl.classList.add("hidden");
+                afterEl.classList.remove("hidden");
+                return;
+            }
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((timeLeft / 1000 / 60) % 60);
+            const seconds = Math.floor((timeLeft / 1000) % 60);
+
+            countdownEl.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
